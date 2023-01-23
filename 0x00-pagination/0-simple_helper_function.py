@@ -1,32 +1,12 @@
 #!/usr/bin/env python3
+def index_range(page: int, page_size: int) -> tuple:
 
-"""Pagination helper function.
+    ''' start to end of last index page '''
 
-"""
+    if page < 1 or page_size < 1:
 
-from typing import Tuple
+        return (0, 0)
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
+    last: int = page_size * page
 
-    """Retrieves the index range from a given page and page size.
-
-    """
-
-    start = (page - 1) * page_size
-
-    end = start + page_size
-
-    return (start, end)
-
-
-
-
-   
-
-   
-
-   
-
-   
-
-   
+    return (last - page_size, last)
